@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import Main from './Main';
 import './App.css';
+import store from './store';
+import _ from 'lodash';
 
 class App extends Component {
   render() {
+    const { contacts } = store.getState();
     return (
       <div className="App">
-        <Sidebar />
+        <Sidebar contacts={_.values(contacts)} />
         <Main />
       </div>
     );
