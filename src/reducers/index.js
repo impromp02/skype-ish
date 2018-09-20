@@ -6,9 +6,9 @@ import messages from './messages';
 import typing from './typing';
 
 export default combineReducers({
-  user, 
-  contacts,
-  activeUserId,
+  user,
   messages,
-  typing
+  typing,       
+  contacts,
+  activeUserId
 });

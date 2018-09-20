@@ -3,18 +3,17 @@ import store from "../store";
 import "./MessageInput.css";
 import { setTypingValue, sendMessage } from "../actions";
 
-const state = store.getState();  
-
-const handleSubmit = e => {
-  e.preventDefault();
-  const { typing, activeUserId } = state;
-  store.dispatch(sendMessage(typing, activeUserId));
-};
 
 const handleChange = e => {
   store.dispatch(setTypingValue(e.target.value));
 };
 
+const handleSubmit = e => {
+  const state = store.getState();  
+  e.preventDefault();
+  const { typing, activeUserId } = state;
+  store.dispatch(sendMessage(typing, activeUserId));
+};
 
 const MessageInput = ({ value }) => {
   return (

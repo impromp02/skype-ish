@@ -6,7 +6,7 @@ export default function messages(state = getMessages(10), action) {
   switch (action.type) {
     case SEND_MESSAGE:
       const { message, userId } = action.payload;
-      console.log(message, userId);   
+      console.log('in reducerer', action);
       const allUserMsgs = state[userId];
       const number = +_.keys(allUserMsgs).pop() + 1;
 
